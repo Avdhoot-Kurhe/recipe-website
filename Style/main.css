@@ -1,0 +1,43 @@
+.search{
+    text-align: center;
+}
+#foodSearch{
+    padding: 10px;
+    width:20%;
+    margin:20px
+}
+button{
+    padding :10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover{
+    background-color: rgba(255, 0, 0, 0.473);
+}
+#container{
+    width:80%;
+    margin: auto;
+    text-align: justify;
+    align-items: center;
+    text-align: center;
+    background-color:rgb(187, 255, 232);
+    padding: 20px
+}
+
+#container>div{
+    background-color:rgb(251, 160, 253);
+    padding: 25px;
+    margin-bottom :20px;
+    border-radius: 15px;
+}
+
+img{
+    width: 80%;
+    
+}
+p{
+    text-align:justify;
+}
+a{
+    font-size: 24px;
+}

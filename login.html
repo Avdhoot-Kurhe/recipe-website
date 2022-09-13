@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         form{
+            width: 50%;
+            margin: auto;
+            text-align: center;
+        }
+        input{
+            /* width:60%; */
+           
+            display: block;
+            font-size: 20px;
+            text-align: center;
+            margin: auto;
+            margin-bottom: 5px;
+           
+        }
+    </style>
+</head>
+<body>
+    
+    <form action="">
+        <input type="email" placeholder="Email" id="email" >
+        <input type="password" placeholder="Password" id="password">
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
+
+<script>
+    let form=document.querySelector("form");
+    let userData=JSON.parse(localStorage.getItem("userData"))
+    form.addEventListener("submit",()=>{
+        event.preventDefault();
+        let data={
+            email:form.email.value,
+            password:form.password.value,
+        }
+        if(userData===null){
+            alert("Please Create an account")
+        }else if(userData.email===data.email && userData.password===data.password){
+            alert("Login Successful")
+            localStorage.setItem("login",JSON.stringify(userData))
+            window.location.href="index.html"
+        }else{
+            alert("User Does not Exist")
+        }
+    })
+</script>

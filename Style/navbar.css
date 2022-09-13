@@ -1,0 +1,30 @@
+#navbar{
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid aqua;
+    background-color: aquamarine;
+    padding: 10px;
+    border-radius: 50px;
+    margin-bottom: 20px;
+    height: 70px;
+}
+body{
+    width: 95%;
+}
+#option{
+    display: flex;
+    gap: 20px;
+}
+
+a{
+    text-decoration:solid;
+}
+a:hover{
+    border-radius: 500%;
+    background-color: rgb(163, 248, 153);
+    color: red;
+    font-size:xx-large;
+}
+h1{
+    text-align: center;
+}

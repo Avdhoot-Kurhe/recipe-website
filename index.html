@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="./Style/navbar.css">
+    <link rel="stylesheet" href="./Style/main.css">
+</head>
+<body>
+    <div id="navbar"></div>
+    <div class="search">
+        <input type="text" placeholder="Food Name" id="foodSearch">
+        <button id="btn">Submmit</button>
+    </div>
+   
+    <div id="container"></div>
+
+
+    <div class="user"></div>
+</body>
+</html>
+
+<script type="module">
+    import navbar from "./JS/navbar.js";
+    document.getElementById("navbar").innerHTML=navbar()
+
+    import {getData,append} from"./JS/appendFetch.js"
+
+    let btn=document.getElementById("btn")
+    btn.addEventListener("click",async()=>{
+        let con=document.getElementById("container")
+        con.innerHTML=""
+        let value=document.getElementById("foodSearch").value;
+        // console.log(value)
+        let url=`https://themealdb.com/api/json/v1/1/search.php?s=${value}`
+    // console.log(getData)
+    let data= await getData(url)
+    console.log(data.meals)
+    append(data.meals,con)
+    })
+</script>

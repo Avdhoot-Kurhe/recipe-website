@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form{
+            width: 50%;
+            margin: auto;
+            text-align: center;
+        }
+        input{
+            /* width:60%; */
+           
+            display: block;
+            font-size: 20px;
+            text-align: center;
+            margin: auto;
+            margin-bottom: 5px;
+           
+        }
+    </style>
+</head>
+<body>
+    
+    <form action="">
+        <input id="userName" type="text" placeholder="Name">
+        <input id="email" type="email" placeholder="Email ID">
+        <input id="password" type="password" placeholder="Password">
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
+
+<script>
+
+let form=document.querySelector("form");
+form.addEventListener ("submit",()=>{
+    event.preventDefault()
+
+var data={
+    userName:form.userName.value,
+    email:form.email.value,
+    password:form.password.value,
+}
+localStorage.setItem("userData",JSON.stringify(data));
+window.location.href="login.html"
+
+})
+
+</script>
